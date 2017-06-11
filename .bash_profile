@@ -1,7 +1,17 @@
-# -- terminal configuration --
+# -- configuration --
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
+
+export ICLOUD="$HOME/Library/Mobile\ Documents/com~apple~CloudDocs"
+
+# -- MacOS --
+alias sysReload='source ~/.bash_profile'                                        # reload bash settings
+alias sysBashProfile='ln -s "$ICLOUD"/enviroment/bash_profile ~/.bash_profile'  # recreate link to icloud bash settings
+alias sysFilesShow='defaults write com.apple.finder AppleShowAllFiles YES;
+                    killall Finder /System/Library/CoreServices/Finder.app'     # Show system files such as .bash_profile | Cmd + Shift + .
+alias sysFilesHide='defaults write com.apple.finder AppleShowAllFiles NO;
+                    killall Finder /System/Library/CoreServices/Finder.app'     # Hide system files such as .bash_profile | Cmd + Shift + .
 
 # -- reimplementations --
 alias mv='mv -i'                                                                # interactive - ask when overwritting
