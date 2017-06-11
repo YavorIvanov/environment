@@ -1,0 +1,32 @@
+# -- terminal configuration --
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
+# -- reimplementations --
+alias mv='mv -i'                                                                # interactive - ask when overwritting
+alias cp='cp -i'                                                                # interactive - ask when overwritting
+alias ln='ln -i'                                                                # interactive - ask when overwritting
+alias ls='ls -FGlAhp'                                                           # Change default 'ls'
+alias ll='ls'
+alias grep='grep --color'                                                       # Change default 'grep'
+
+# -- shortcuts --
+alias flushhosts='dscacheutil -flushcache; sudo killall -HUP mDNSResponder'     # Clear the DNS cache in MacOS
+alias mypublicip='dig +short myip.opendns.com @resolver1.opendns.com'           # Get my public IP
+alias mylocalip='ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d " " -f2'  # Get my local IP
+alias myip='echo "local:"; mylocalip; echo "public:"; mypublicip'               # Display local and pulic IPs
+alias myips='myips'
+
+alias finder='open -a Finder ./'                                                # Opens current directory in MacOS Finder
+alias cpwd='pwd|tr -d "\n"|pbcopy'                                              # copy working directory path
+
+# -- custom command implementations --
+trash () { command mv "$@" ~/.Trash ; }                                         # trash: Moves a file to the MacOS trash
+
+# -- development specific --
+alias be='bundle exec'
+alias mongostart='mongod --dbpath=$HOME/Work/services/mongodb'
+
+export PATH="$PATH:$HOME/.rvm/bin"                                              # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"            # Load RVM into a shell session *as a function*
