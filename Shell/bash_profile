@@ -37,11 +37,11 @@ trash () { command mv "$@" ~/.Trash ; }                                         
 # -- development specific ------------------------------------------------------
 alias gitsync='git fetch --all; git pull --rebase; git push --progress'         # git => sync current branch
 
-alias be='bundle exec'
-alias mongostart='mongod --dbpath=$HOME/Work/services/mongodb'
+alias be='bundle exec'                                                          # rails => shortcut for bundle exec
+alias mongostart='mongod --dbpath=$HOME/Work/services/mongodb'                  # mongo => start mongo in services folder
 
-if [ -f ~/.git-completion.bash ]; then
+if [ -f ~/.git-completion.bash ]; then                                          # git => completition for git commands
   . ~/.git-completion.bash
 fi
 
-eval "$(rbenv init -)"
+eval "$(rbenv init -)"                                                          # rbenv
