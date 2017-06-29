@@ -35,6 +35,8 @@ alias cpwd='pwd|tr -d "\n"|pbcopy'                                              
 trash () { command mv "$@" ~/.Trash ; }                                         # trash: Moves a file to the MacOS trash
 
 # -- development specific ------------------------------------------------------
+alias gitsync='git fetch; git pull --rebase; git push'                          # git => sync current branch
+
 alias be='bundle exec'
 alias mongostart='mongod --dbpath=$HOME/Work/services/mongodb'
 
