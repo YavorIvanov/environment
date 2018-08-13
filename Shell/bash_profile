@@ -26,7 +26,7 @@ alias flushhosts='dscacheutil -flushcache; sudo killall -HUP mDNSResponder'     
 alias mypublicip='dig +short myip.opendns.com @resolver1.opendns.com'           # Get my public IP
 alias mylocalip='ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d " " -f2'  # Get my local IP
 alias myip='echo "local:"; mylocalip; echo "public:"; mypublicip'               # Display local and pulic IPs
-alias myips='myips'
+alias myips='myip'
 
 alias finder='open -a Finder ./'                                                # Opens current directory in MacOS Finder
 alias cpwd='pwd|tr -d "\n"|pbcopy'                                              # copy working directory path
